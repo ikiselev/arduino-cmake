@@ -179,6 +179,7 @@
 #                          LIBRARY library_name
 #                          EXAMPLE example_name
 #                          [BOARD  board_id]
+#                          [LIBS  lib1 lib2 ... libN]
 #                          [PORT port]
 #                          [SERIAL serial command]
 #                          [PORGRAMMER programmer_id]
@@ -189,6 +190,7 @@
 #        LIBRARY      - Library name                           [REQUIRED]
 #        EXAMPLE      - Example name                           [REQUIRED]
 #        BOARD        - Board ID
+#        LIBS         - Libraries to link
 #        PORT         - Serial port [optional]
 #        SERIAL       - Serial command [optional]
 #        PROGRAMMER   - Programmer id (enables programmer support)
@@ -585,7 +587,7 @@ function(GENERATE_ARDUINO_EXAMPLE INPUT_NAME)
     parse_generator_arguments(${INPUT_NAME} INPUT
                               ""                                       # Options
                               "LIBRARY;EXAMPLE;BOARD;PORT;PROGRAMMER"  # One Value Keywords
-                              "SERIAL;AFLAGS"                          # Multi Value Keywords
+                              "SERIAL;AFLAGS;LIBS"                     # Multi Value Keywords
                               ${ARGN})
 
 
